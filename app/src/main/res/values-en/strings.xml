@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SobreLaLinea</string>
+    <string name="email">Email</string>
+    <string name="contrasenha">Password</string>
+    <string name="iniciar_sesion">Sign In</string>
+    <string name="registarse">" If you do not have an account, you can register by clicking here"</string>
+    <string name="Nombre_usuario">Username</string>
+    <string name="Telefono">Phone</string>
+    <string name="cliente">Customer</string>
+    <string name="Imprenta">Printing</string>
+    <string name="pedir_presupuesto">Ask for a quote</string>
+    <string name="Escribe_mensaje">Write a message</string>
+    <string name="Producto">Products</string>
+    <string name="Precio">Price</string>
+    <string name="Pagar">Pay</string>
+    <string name="Agregar_carrito">Add to cart</string>
+</resources>

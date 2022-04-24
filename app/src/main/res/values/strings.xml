@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SobreLaLinea</string>
+    <string name="email">Correo Electronico</string>
+    <string name="contrasenha">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="registarse">Si no tiene cuenta, pulse aqui para registrarse</string>
+    <string name="Nombre_usuario">Nombre de usuario</string>
+    <string name="Telefono">Telefono</string>
+    <string name="cliente">Cliente</string>
+    <string name="Imprenta">Imprenta</string>
+    <string name="pedir_presupuesto">Pedir un presupuesto</string>
+    <string name="Escribe_mensaje">Escribe un mensaje</string>
+    <string name="Producto">Productos</string>
+    <string name="Precio">Precio</string>
+    <string name="Pagar">Pagar</string>
+    <string name="Agregar_carrito">Agregar al carrito</string>
+</resources>
