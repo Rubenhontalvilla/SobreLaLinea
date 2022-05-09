@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "308371471204",
+    "project_id": "sobrelalinea-9ccb6",
+    "storage_bucket": "sobrelalinea-9ccb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308371471204:android:11746f6d2b8594cb5cd871",
+        "android_client_info": {
+          "package_name": "com.example.sobrelalinea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308371471204-gvkns6n6sibak37c1rb9n2eqvfqe35uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPctjrjDXYcGOTaN0Ih90AFi6AD0TOgPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308371471204-gvkns6n6sibak37c1rb9n2eqvfqe35uq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

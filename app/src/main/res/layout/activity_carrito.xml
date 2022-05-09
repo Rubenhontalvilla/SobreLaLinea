@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,83 +10,77 @@
 
     <LinearLayout
         android:id="@+id/linearLayout19"
-        android:layout_width="248dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="112dp"
-        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Producto"
-            android:textAlignment="center" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvCantProductos"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#F44336"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnVerCarrito"
+                android:layout_width="327dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#26872A"
+                android:text="@string/VER_CARRITO"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCantProductos"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="left"
+                app:constraint_referenced_ids="btnVerCarrito" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout20"
-        android:layout_width="412dp"
-        android:layout_height="344dp"
-        android:layout_marginTop="40dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout19" >
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout21"
-        android:layout_width="156dp"
-        android:layout_height="75dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaProductos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout20"
-        app:layout_constraintVertical_bias="0.0">
-
-        <EditText
-            android:id="@+id/editTextTextPersonName4"
-            android:layout_width="156dp"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Precio" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout22"
-        android:layout_width="102dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout21"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout20"
-        app:layout_constraintVertical_bias="0.0"></LinearLayout>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="144dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#3D96BF"
-        android:text="@string/Pagar"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout22"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout20"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout19" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
