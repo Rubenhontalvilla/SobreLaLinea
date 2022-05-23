@@ -1,5 +1,6 @@
 package com.example.sobrelalinea;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,21 +17,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.Serializable;
 import java.util.List;
 
-public class AdaptadorProductos extends RecyclerView.Adapter {
-    public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.ProductosViewHolder> {
+
+public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.ProductosViewHolder> {
 
         Context context;
         TextView tvCantProductos;
         Button btnVerCarro;
         List<Producto> listaProductos;
-        List<Producto> carroCompra;
+        List<Producto> carritoCompra;
 
-        public AdaptadorProductos(Context context, TextView tvCantProductos, Button btnVerCarro, List<Producto> listaProductos, List<Producto> carroCompra) {
+        public AdaptadorProductos(Context context, TextView tvCantProductos, Button btnVerCarro, List<Producto> listaProductos, List<Producto> carritoCompra) {
             this.context = context;
             this.tvCantProductos = tvCantProductos;
             this.btnVerCarro = btnVerCarro;
             this.listaProductos = listaProductos;
-            this.carroCompra = carroCompra;
+            this.carritoCompra = carritoCompra;
         }
 
         @NonNull
@@ -41,20 +42,20 @@ public class AdaptadorProductos extends RecyclerView.Adapter {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull final ProductosViewHolder productosViewHolder, final int i) {
+        public void onBindViewHolder(@NonNull final ProductosViewHolder productosViewHolder, @SuppressLint("RecyclerView") final int i) {
             productosViewHolder.tvNomProducto.setText(listaProductos.get(i).getNomProducto());
             productosViewHolder.tvDescripcion.setText(listaProductos.get(i).getDescripcion());
             productosViewHolder.tvPrecio.setText(""+listaProductos.get(i).getPrecio());
 
-            productosViewHolder.cbCarro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            productosViewHolder.cbCarrito.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(productosViewHolder.cbCarro.isChecked() == true) {
+                    if(productosViewHolder.cbCarrito.isChecked() == true) {
                         tvCantProductos.setText(""+(Integer.parseInt(tvCantProductos.getText().toString().trim()) + 1));
-                        carroCompra.add(listaProductos.get(i));
-                    } else if(productosViewHolder.cbCarro.isChecked() == false) {
+                        carritoCompra.add(listaProductos.get(i));
+                    } else if(productosViewHolder.cbCarrito.isChecked() == false) {
                         tvCantProductos.setText(""+(Integer.parseInt(tvCantProductos.getText().toString().trim()) - 1));
-                        carroCompra.remove(listaProductos.get(i));
+                        carritoCompra.remove(listaProductos.get(i));
                     }
                 }
             });
@@ -63,7 +64,7 @@ public class AdaptadorProductos extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, Carrito.class);
-                    intent.putExtra("CarroCompras", (Serializable) carroCompra);
+                    intent.putExtra("CarritoCompras", (Serializable) carritoCompra);
                     context.startActivity(intent);
                 }
             });
@@ -78,15 +79,15 @@ public class AdaptadorProductos extends RecyclerView.Adapter {
         public class ProductosViewHolder extends RecyclerView.ViewHolder {
 
             TextView tvNomProducto, tvDescripcion, tvPrecio;
-            CheckBox cbCarro;
+            CheckBox cbCarrito;
 
             public ProductosViewHolder(@NonNull View itemView) {
                 super(itemView);
 
-                tvNomProducto = itemView.findViewById(R.id.tvNomProducto);
+                tvNomProducto = itemView.findViewById(R.id.tvNombreProducto);
                 tvDescripcion = itemView.findViewById(R.id.tvDescripcion);
                 tvPrecio = itemView.findViewById(R.id.tvPrecio);
-                cbCarro = itemView.findViewById(R.id.cbCarro);
+                cbCarrito = itemView.findViewById(R.id.cbCarrito);
             }
         }
     }
